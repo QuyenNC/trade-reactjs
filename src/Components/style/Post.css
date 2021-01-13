@@ -1,0 +1,125 @@
+.Post{
+    width: 100%;
+    background-color: white;
+    margin-top: 10px;
+    border-radius: 5px;
+    padding: 10px;
+}
+.p-post{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.p-info{
+    display: flex;
+}
+.p-info .info{
+    margin-left: 10px;
+}
+.p-info .info h3{
+    font-weight: 600;
+    font-size: .9375rem;
+    margin: 0;
+}
+.p-info .info p{
+    font-weight: 600;
+    color: rgb(206, 203, 203);
+}
+.p-image{
+    width: 100%;
+}
+
+.p-count{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid #ddd;
+    border-bottom:  1px solid #ddd;
+    padding-top: 10px;
+}
+.p-count .count-like{
+    display: flex;
+}
+.p-count .count-like img{
+    width: 20px;
+    height: 20px;
+    margin-right: 6px;
+    cursor: pointer;
+}
+.p-count .count-like span{
+    font-size: .9375rem;
+    line-height: 1.3333;
+    color: rgb(139, 136, 136);
+    cursor: pointer;
+}
+.p-count .count-like span:hover{
+    text-decoration: underline;
+}
+
+.p-count .count-cmt p{
+    font-size: .9375rem;
+    line-height: 1.3333;
+    color: rgb(139, 136, 136);
+    cursor: pointer;
+}
+.p-count .count-cmt p:hover{
+    text-decoration: underline;
+}
+.p-action{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 3px;
+}
+.p-action p{
+    width: 50%;
+    padding: 10px 0px;
+    display: block;
+    text-align: center;
+    font-size: .9375rem;
+    cursor: pointer;
+    font-weight: 600;
+    color: rgb(104, 103, 103);
+    margin: 0;
+}
+.p-action p:hover{
+    background-color: rgba(190, 188, 188, 0.699);
+    border-radius: 5px;
+}
+.p-comment{
+    width: 100%;
+}
+.form-cmt{
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+}
+.form-cmt form{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.form-cmt textarea{
+    margin: 0px; 
+    width: 90%; 
+    height: 50px;
+    border: none;
+    outline: none;
+    padding-top: 15px;
+    padding-left: 15px;
+    resize: none;
+    font-size: 15px;
+}
+.form-cmt input{
+    margin: 15px;
+    width: 10%;
+    background-color: white;
+    border: none;
+    font-weight: bold;
+    color:#0095f6;
+    outline: none;
+    cursor: pointer;
+} 
+.p-comment .list-cmt{
+    width: 100%;
+}

@@ -5,9 +5,10 @@ import {
 } from "react-router-dom";
 
 
+
 import './App.css';
 import Header from './Components/Header';
-import Nav from './Components/Index/Nav';
+import Index from './Components/Index/Index';
 import Login from './Components/Login/Login';
 import Register from './Components/Login/Register';
 import Forgot from './Components/Login/Forgot';
@@ -33,7 +34,7 @@ function App() {
             <Login />
           </Route>
           <Route path="/">
-            <Nav />
+            <Index />
           </Route>
         </Switch>
       </div>
