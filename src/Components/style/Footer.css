@@ -1,0 +1,35 @@
+.Footer{
+    margin-top: 10px;
+    width: 100%;
+    background-color: white;
+    padding-top: 10px;
+}
+.Footer h3{
+    font-size: 16px;
+    text-transform: uppercase;
+}
+.Footer ul{
+    list-style-type: none;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+    flex-direction: column;
+}
+.Footer ul li{
+    margin-right: 16px;
+    font-size: 14px;
+    margin: 0;
+    line-height: 1.29;
+    padding: 0;
+    margin-bottom: 12px;
+    color: #4a4a4a;
+}
+.icon{
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+}
+.icon img{
+    margin-right: 15px;
+}
