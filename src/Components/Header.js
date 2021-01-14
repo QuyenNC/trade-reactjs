@@ -29,12 +29,12 @@ function Header() {
         </Link>
       </Menu.Item>
       <Menu.Item>
-        <Link  to="profile" className="drop-menu"  >
+        <Link  to="exchange-request" className="drop-menu"  >
           <TransactionOutlined  style={{ fontSize: '20px',marginRight:'10px' }} />Đề nghị trao đổi
         </Link>
       </Menu.Item>
       <Menu.Item>     
-        <Link  to="profile" className="drop-menu"  >
+        <Link  to="request-exchange" className="drop-menu"  >
           <SplitCellsOutlined style={{ fontSize: '20px',marginRight:'10px' }} />Yêu cầu trao đổi
         </Link>
       </Menu.Item>

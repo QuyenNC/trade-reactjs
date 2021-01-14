@@ -13,14 +13,21 @@ import Login from './Components/Login/Login';
 import Register from './Components/Login/Register';
 import Forgot from './Components/Login/Forgot';
 import Profile from './Components/Profile/Profile';
+import ExchangeRequest from './Components/Trade/ExchangeRequest';
+import RequestExchange from './Components/Trade/RequestExchange';
 function App() {
   return (
     <Router>
       <div className="App">
 
         <Header />
-
         <Switch>
+          <Route path="/request-exchange">
+            <RequestExchange />
+          </Route>
+          <Route path="/exchange-request">
+            <ExchangeRequest />
+          </Route>
           <Route path="/profile">
             <Profile />
           </Route>

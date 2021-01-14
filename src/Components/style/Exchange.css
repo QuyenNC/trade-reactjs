@@ -1,0 +1,18 @@
+.ExchangeRequest{
+    width: 100%;
+    background-color: white;
+    padding-top: 10px;
+}
+.ExchangeRequest .ex-title{
+    width: 100%;
+    text-align: center;
+}
+.RequestExchange{
+    width: 100%;
+    background-color: white;
+    padding-top: 10px;
+}
+.RequestExchange .ex-title{
+    width: 100%;
+    text-align: center;
+}
