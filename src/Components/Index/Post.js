@@ -1,5 +1,5 @@
 import 'antd/dist/antd.css';
-import { Avatar,Menu, Dropdown, Carousel,Tooltip,Comment  } from 'antd';
+import { Avatar,Menu, Dropdown, Carousel,Comment  } from 'antd';
 import { UserOutlined, EllipsisOutlined, MessageOutlined, LikeOutlined } from '@ant-design/icons';
 
 import Like from '../image/like.svg';
@@ -12,13 +12,14 @@ function Post() {
       <Menu.Item danger>Gỡ bài</Menu.Item>
     </Menu>
   );
-  const text = <span>Quyền Nguyễn</span>;
+
   const contentStyle = {
     height: '400px',
     color: '#fff',
     lineHeight: '160px',
     textAlign: 'center',
     background: '#364d79',
+    width:'100%'
   };
   return (
     <div className="Post">
@@ -44,17 +45,19 @@ function Post() {
         <div className="p-image">
           <Carousel >
             <div>
-              <h3 style={contentStyle}>1</h3>
+              {/* <h3 style={contentStyle}>1</h3> */}
+              <img src={Like} alt="sdf" style={contentStyle} />
+            </div>
+            <div>
+              {/* <h3 style={contentStyle}>1</h3> */}
+              <img src={Like} alt="sdf" style={contentStyle} />
             </div>
           </Carousel>
         </div>
         <div className="p-count">
             <div className="count-like"> 
-              <Tooltip placement="bottom" title={text}>
-                <img src={Like} alt="like-post"/>
-                <span>0 like</span>
-              </Tooltip>
-              
+              <img src={Like} alt="like-post"/>
+              <span>0 like</span>
             </div>
             <div className="count-cmt">
               <p>8 bình luận</p>

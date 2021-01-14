@@ -2,23 +2,24 @@ import '../style/Nav.css';
 import 'antd/dist/antd.css';
 import { Menu } from 'antd';
 import {
-    MailOutlined,
-    CalendarOutlined,
-    AppstoreOutlined,
-    SettingOutlined,
-    LinkOutlined,
+  SkinOutlined,
+  CarOutlined,
+  BranchesOutlined,
+  GithubOutlined,
+  ClearOutlined,
+  HomeOutlined
   } from '@ant-design/icons';
 
 function Nav() {
   return (
     <div className="Nav">
        <Menu  mode="vertical"  >      
-            <Menu.Item key="1" icon={<MailOutlined />}>Option 1</Menu.Item>
-            <Menu.Item key="2" icon={<CalendarOutlined />}>Option 2</Menu.Item>
-            <Menu.Item key="3" icon={<AppstoreOutlined />}>Option 3</Menu.Item>
-            <Menu.Item key="4" icon={<SettingOutlined />}>Option 4</Menu.Item>
-            <Menu.Item key="5" icon={<LinkOutlined />}>Option 5</Menu.Item>
-            <Menu.Item key="6" icon={<MailOutlined />}>Option 6</Menu.Item>
+            <Menu.Item key="1" icon={<HomeOutlined />}>Bất động sản</Menu.Item>
+            <Menu.Item key="2" icon={<CarOutlined />}>Xe cộ</Menu.Item>
+            <Menu.Item key="3" icon={<BranchesOutlined />}>Đồ điện tử</Menu.Item>
+            <Menu.Item key="4" icon={<GithubOutlined />}>Thú cưng</Menu.Item>
+            <Menu.Item key="5" icon={<ClearOutlined />}>Đồ gia dụng</Menu.Item>
+            <Menu.Item key="6" icon={<SkinOutlined />}>Thời trang</Menu.Item>
         </Menu>,
     </div>
   );
