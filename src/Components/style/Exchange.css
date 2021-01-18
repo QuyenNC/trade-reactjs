@@ -16,3 +16,12 @@
     width: 100%;
     text-align: center;
 }
+.HistoryExchange{
+    width: 100%;
+    background-color: white;
+    padding-top: 10px;
+}
+.HistoryExchange .ex-title{
+    width: 100%;
+    text-align: center;
+}

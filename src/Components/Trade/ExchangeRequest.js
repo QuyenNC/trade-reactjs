@@ -1,5 +1,5 @@
 import 'antd/dist/antd.css';
-import { Table, Space } from 'antd';
+import { Table, Space, Button } from 'antd';
 // import { UserOutlined, EllipsisOutlined, MessageOutlined, LikeOutlined } from '@ant-design/icons';
 
 
@@ -24,17 +24,17 @@ function ExchangeRequest() {
       key: 'address',
     },
     {
-      title: 'Trạng thái',
-      dataIndex: 'status',
-      key: 'status',
-    },
-    {
       title: '',
       key: 'action',
       render: () => (
+        
         <Space size="middle">
-            <span>Đồng ý</span>
-            <span>Từ chối</span>
+             <Button type="primary">
+                Đồng ý
+              </Button>
+              <Button type="primary">
+                Từ chối
+              </Button>
         </Space>
       ),
     },
@@ -45,23 +45,20 @@ function ExchangeRequest() {
       key: '1',
       name: 'John Brown',
       age: 32,
-      address: 'New York No. 1 Lake Park',
-      status : 'Chờ xác nhận'
+      address: 'New York No. 1 Lake Park'
    
     },
     {
       key: '2',
       name: 'Jim Green',
       age: 42,
-      address: 'London No. 1 Lake Park',
-      status : 'Xác nhận'
+      address: 'London No. 1 Lake Park'
     },
     {
       key: '3',
       name: 'Joe Black',
       age: 32,
-      address: 'Sidney No. 1 Lake Park',
-      status : 'Từ chối'
+      address: 'Sidney No. 1 Lake Park'
     },
   ];
     return (

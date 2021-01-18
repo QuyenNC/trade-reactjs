@@ -15,13 +15,20 @@ import Forgot from './Components/Login/Forgot';
 import Profile from './Components/Profile/Profile';
 import ExchangeRequest from './Components/Trade/ExchangeRequest';
 import RequestExchange from './Components/Trade/RequestExchange';
+import HistoryExchange from './Components/Trade/HistoryExchange';
+import PostExchange from './Components/Trade/PostExchange';
 function App() {
   return (
     <Router>
       <div className="App">
-
         <Header />
         <Switch>
+          <Route path="/post-exchange">
+            <PostExchange />
+          </Route>
+          <Route path="/history-exchange">
+            <HistoryExchange />
+          </Route>
           <Route path="/request-exchange">
             <RequestExchange />
           </Route>

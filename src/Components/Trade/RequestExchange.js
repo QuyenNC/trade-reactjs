@@ -1,6 +1,11 @@
 import 'antd/dist/antd.css';
-import { Table, Space } from 'antd';
-// import { UserOutlined, EllipsisOutlined, MessageOutlined, LikeOutlined } from '@ant-design/icons';
+import { Table, Tag, Button, Space } from 'antd';
+
+import {
+  CheckCircleOutlined,
+  SyncOutlined,
+  CloseCircleOutlined
+} from '@ant-design/icons';
 
 
 
@@ -27,13 +32,34 @@ function RequestExchange() {
       title: 'Trạng thái',
       dataIndex: 'status',
       key: 'status',
+      render: (status) => (
+        <>
+          {status.map(status => {
+            let color = status === 'xác nhận'  ? 'success' : 'error';
+            let icon = status === 'xác nhận'  ? <CheckCircleOutlined /> : <CloseCircleOutlined />;
+            if (status === 'chờ xác nhận') {
+              color = 'processing';
+            }
+            if (status === 'chờ xác nhận') {
+              icon = <SyncOutlined spin />;
+            }
+            return (
+              <Tag color={color} key={status} icon={icon}>
+                {status.toUpperCase()}
+              </Tag>
+            );
+          })}
+        </>
+      ),
     },
     {
       title: '',
       key: 'action',
       render: () => (
         <Space size="middle">
-            <span>Hủy yêu cầu</span>
+             <Button type="primary">
+                Hủy yêu cầu
+              </Button>
         </Space>
       ),
     },
@@ -45,7 +71,7 @@ function RequestExchange() {
       name: 'John Brown',
       age: 32,
       address: 'New York No. 1 Lake Park',
-      status : 'Chờ xác nhận'
+      status : ['chờ xác nhận']
    
     },
     {
@@ -53,14 +79,14 @@ function RequestExchange() {
       name: 'Jim Green',
       age: 42,
       address: 'London No. 1 Lake Park',
-      status : 'Xác nhận'
+      status : ['xác nhận']
     },
     {
       key: '3',
       name: 'Joe Black',
       age: 32,
       address: 'Sidney No. 1 Lake Park',
-      status : 'Từ chối'
+      status : ['từ chối']
     },
   ];
     return (

@@ -39,7 +39,7 @@ function Header() {
         </Link>
       </Menu.Item>
       <Menu.Item>
-        <Link  to="profile" className="drop-menu"  >
+        <Link  to="history-exchange" className="drop-menu"  >
           <AreaChartOutlined style={{ fontSize: '20px',marginRight:'10px' }} />Lịch sữ giao dịch
         </Link>
       </Menu.Item>
@@ -69,15 +69,17 @@ function Header() {
       <div className="wrap">
         <Row>
           <Col span={6}>
-            <div className="logo">
-              <img src={Logo} alt="Main logo gl-trade" />
-            </div>
+            <Link to="/">
+              <div className="logo">
+                <img src={Logo} alt="Main logo gl-trade" />
+              </div>
+            </Link>
           </Col>
           <Col span={18} >
             <div className="main-menu">
               <ul>
                 <li><Link to="/"><HomeOutlined  style={{ fontSize: '20px',marginRight:'10px' }}/>Trang chủ</Link></li>
-                <li><Link to="/trade"><AuditOutlined style={{ fontSize: '20px',marginRight:'10px' }}/>Tôi bán</Link></li>
+                <li><Link to="post-exchange"><AuditOutlined style={{ fontSize: '20px',marginRight:'10px' }}/>Tôi bán</Link></li>
                 <li><Dropdown overlay={notification} placement="bottomRight" arrow><span><Badge size="small" offset={[-10, -2]}  count={0} showZero><WechatOutlined style={{ fontSize: '20px',marginRight:'10px' }} /></Badge>Thông báo</span></Dropdown></li>
                 <li><Dropdown overlay={menu} placement="bottomRight" arrow><span ><EllipsisOutlined style={{ fontSize: '20px',marginRight:'10px' }} /></span></Dropdown></li>
               </ul>

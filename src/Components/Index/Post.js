@@ -1,12 +1,13 @@
 import 'antd/dist/antd.css';
-import { Avatar,Menu, Dropdown, Carousel,Comment  } from 'antd';
-import { UserOutlined, EllipsisOutlined, MessageOutlined, LikeOutlined } from '@ant-design/icons';
+import { Avatar,Menu, Dropdown, Carousel,Comment, Typography  } from 'antd';
+import { UserOutlined, EllipsisOutlined, MessageOutlined, LikeOutlined, TransactionOutlined } from '@ant-design/icons';
 
 import Like from '../image/like.svg';
 
 import '../style/Post.css'
 
 function Post() {
+  const { Paragraph } = Typography;
   const menu = (
     <Menu>
       <Menu.Item danger>Gỡ bài</Menu.Item>
@@ -40,7 +41,16 @@ function Post() {
         <div className="p-title">
             <h3>Tên sản phẩm : <span>Máy tính bảng</span></h3>
             <h3>Địa chỉ : <span>16 Nguyễn Quang Bích Tân Bính Hồ Chí Minh</span></h3>
-            <p>Mong muốn trao đổi</p>
+            <Paragraph ellipsis={{ rows: 2, expandable: true, symbol: "Xem thêm" }}>
+              Ant Design, a design language for background applications, is refined by
+              Ant UED Team. Ant Design, a design language for background applications,
+              is refined by Ant UED Team. Ant Design, a design language for background
+              applications, is refined by Ant UED Team. Ant Design, a design language
+              for background applications, is refined by Ant UED Team. Ant Design, a
+              design language for background applications, is refined by Ant UED Team.
+              Ant Design, a design language for background applications, is refined by
+              Ant UED Team.
+            </Paragraph>
         </div>
         <div className="p-image">
           <Carousel >
@@ -66,6 +76,7 @@ function Post() {
         <div className="p-action">
             <p><LikeOutlined style={{marginRight:'10px'}} />Thích</p>
             <p><MessageOutlined style={{marginRight:'10px'}} />Bình luận</p>
+            <p><TransactionOutlined style={{marginRight:'10px'}} />Trao đổi</p>
         </div>
         <div className="p-comment">
           <div className="form-cmt">
