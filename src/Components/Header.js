@@ -46,22 +46,11 @@ function Header() {
     </Menu>
   );
   const notification = (
-    <Menu>
-      <Menu.Item>
-        <a target="_blank" rel="noopener noreferrer" href="http://www.alipay.com/">
-          1st menu item
-        </a>
+    <Menu >
+      <Menu.Item >
+        Bạn nhận được yêu cầu trao đổi
       </Menu.Item>
-      <Menu.Item>
-        <a target="_blank" rel="noopener noreferrer" href="http://www.taobao.com/">
-          2nd menu item
-        </a>
-      </Menu.Item>
-      <Menu.Item>
-        <a target="_blank" rel="noopener noreferrer" href="http://www.tmall.com/">
-          3rd menu item
-        </a>
-      </Menu.Item>
+     
     </Menu>
   );
   return (
@@ -100,7 +89,7 @@ function Header() {
                 <Link to="/login"><LoginOutlined style={{ fontSize: '20px',marginRight:'10px' }} />Đăng nhập</Link>
               </div>
               <div className="post">
-                <Link to="/post"><FormOutlined style={{ fontSize: '20px',marginRight:'10px' }} />Đăng tin</Link>
+                <Link to="post-product"><FormOutlined style={{ fontSize: '20px',marginRight:'10px' }} />Đăng tin</Link>
               </div>
             </div>
           </Col>

@@ -17,12 +17,16 @@ import ExchangeRequest from './Components/Trade/ExchangeRequest';
 import RequestExchange from './Components/Trade/RequestExchange';
 import HistoryExchange from './Components/Trade/HistoryExchange';
 import PostExchange from './Components/Trade/PostExchange';
+import PostProduct from './Components/Trade/PostProduct';
 function App() {
   return (
     <Router>
       <div className="App">
         <Header />
         <Switch>
+          <Route path="/post-product">
+            <PostProduct />
+          </Route>
           <Route path="/post-exchange">
             <PostExchange />
           </Route>
