@@ -1,7 +1,8 @@
+import React, { useState } from 'react';
 import 'antd/dist/antd.css';
 import { Table} from 'antd';
 import {  Tag, Space } from 'antd';
-
+import {Redirect} from "react-router-dom";
 import {
     CheckCircleOutlined
   } from '@ant-design/icons';
@@ -10,6 +11,12 @@ import {
 import '../style/Exchange.css'
 
 function HistoryExchange() {
+  const token = localStorage.getItem('token');
+  let isLoginStt = true;
+  if(token == null){
+    isLoginStt = false
+  }
+  const [isLogin ] = useState(isLoginStt);
     const columns = [
         {
           title: 'Sản phẩm',
@@ -63,6 +70,9 @@ function HistoryExchange() {
       status : ['từ chối']
     },
   ];
+  if(isLogin === false){
+    return <Redirect to="login"/>;
+  }
     return (
         <div className="HistoryExchange">
             <div className="wrap">
@@ -70,7 +80,7 @@ function HistoryExchange() {
                     <h1>Lịch sử giao dịch</h1>
                 </div>
                 <div className="ex-table">
-                    <Table columns={columns} dataSource={data} />
+                    <Table columns={columns}  pagination={{ pageSize: 7}} dataSource={data} />
                 </div>
             </div>
         </div>

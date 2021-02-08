@@ -2,6 +2,7 @@
     width: 100%;
     background-color: white;
     padding-top: 10px;
+    height: 670px;
 }
 .ExchangeRequest .ex-title{
     width: 100%;
@@ -11,6 +12,7 @@
     width: 100%;
     background-color: white;
     padding-top: 10px;
+    height: 670px;
 }
 .RequestExchange .ex-title{
     width: 100%;
@@ -20,6 +22,7 @@
     width: 100%;
     background-color: white;
     padding-top: 10px;
+    height: 670px;
 }
 .HistoryExchange .ex-title{
     width: 100%;

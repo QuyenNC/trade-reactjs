@@ -1,15 +1,48 @@
-
-import {Link} from "react-router-dom";
+import React, { useState } from 'react';
+import axios from 'axios';
+import {Link, Redirect} from "react-router-dom";
 import 'antd/dist/antd.css';
-import { Form, Input, Button} from 'antd';
-import { UserOutlined, LockOutlined, GoogleOutlined,MailOutlined,PhoneOutlined} from '@ant-design/icons';
+import { Form, Input, Button, message} from 'antd';
+import { UserOutlined, LockOutlined, GoogleOutlined,MailOutlined,PhoneOutlined,EnvironmentOutlined} from '@ant-design/icons';
 
 import '../style/Register.css';
 
 function Register() {
+
+    const token = localStorage.getItem('token');
+    let isLoginStt = true;
+    if(token == null){
+        isLoginStt = false
+    }
+    const [isLogin ] = useState(isLoginStt);
+    
+
+    const [isRegis,setIsRegis] = useState(false);
+    const [loadRegis,setLoadRegis] = useState(false);
     const onFinish = (values) => {
-        console.log('Received values of form: ', values);
+        setLoadRegis(true);
+        const url = "/api/auth/register";
+        axios.post(url,values )
+          .then(function (res) {
+            if(res.data.errors){
+                return  message.error(res.data.errors.msg);
+            }
+            if(res.data.success){
+                setIsRegis(true);
+                return message.success(res.data.success.msg);
+            }
+          })
+          .catch(function (error) {
+            console.log(error);
+          });
       };
+    
+    if(isRegis === true){
+        return <Redirect to="login" />
+    }
+    if(isLogin === true){
+        return <Redirect to="/"/>;
+      }
   return (
     <div className="Register">
        <div className="wrap">
@@ -29,12 +62,12 @@ function Register() {
                         rules={[
                         {
                             type: 'email',
-                            message: 'The input is not valid E-mail!',
+                            message: 'E-mail không hợp lệ !',
                         },
                         {
                             required: true,
-                            message: 'Please input your E-mail!',
-                        },
+                            message: 'Vui lòng nhập  E-mail!',
+                        }
                         ]}
                     >
                          <Input className="input-control" prefix={<MailOutlined  className="site-form-item-icon" />} placeholder="Email" />
@@ -44,8 +77,12 @@ function Register() {
                         rules={[
                         {
                             required: true,
-                            message: 'Please input your Username!',
+                            message: 'Vui lòng nhập Username!',
                         },
+                        {
+                            min:6,
+                            message :'Username tối thiểu 6 kí tự'
+                        }
                         ]}
                     >
                         <Input className="input-control" prefix={<UserOutlined className="site-form-item-icon" />} placeholder="Username" />
@@ -55,8 +92,16 @@ function Register() {
                         rules={[
                             {
                               required: true,
-                              message: 'Please input your password!',
+                              message: 'Please input your password !',
                             },
+                            {
+                                min:6,
+                                message :'Password tối thiểu 6 kí tự !'
+                            },
+                            {
+                                whitespace:true,
+                                message:'Password không được chứa khoảng trắng !'
+                            }
                           ]}
                           hasFeedback
                     >
@@ -95,18 +140,41 @@ function Register() {
                         />
                     </Form.Item>
                     <Form.Item
-                        name="username"
+                        name="phonenumber"
                         rules={[
                         {
                             required: true,
-                            message: 'Please input your Phonenumber!',
+                            message: 'Vui lòng nhập Phonenumber!'
                         },
+                        {
+                            min:10,
+                            message :'Số điện thoại không quá 10 số!'
+                        },
+                        {
+                            max:10,
+                            message :'Số điện thoại không quá 10 số!'
+                        }
                         ]}
                     >
-                        <Input className="input-control" prefix={<PhoneOutlined className="site-form-item-icon" />} placeholder="Phone number" />
+                        <Input type="number" className="input-control" prefix={<PhoneOutlined className="site-form-item-icon" />} placeholder="Phone number" />
+                    </Form.Item>
+                    <Form.Item
+                        name="address"
+                        rules={[
+                        {
+                            required: true,
+                            message: 'Vui lòng nhập địa chỉ !',
+                        },
+                        {
+                            min:30,
+                            message :'Địa chỉ tối thiểu 30 kí tự !'
+                        }
+                        ]}
+                    >
+                        <Input className="input-control" prefix={<EnvironmentOutlined   className="site-form-item-icon" />} placeholder="Nhập địa chỉ của bạn" />
                     </Form.Item>
                     <Form.Item className="login-btn">
-                        <Button type="primary" htmlType="submit" className="login-form-button">
+                        <Button type="primary" loading={loadRegis} htmlType="submit" className="login-form-button">
                             Đăng ký
                         </Button>
                     </Form.Item>

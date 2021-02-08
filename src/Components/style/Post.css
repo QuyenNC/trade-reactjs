@@ -71,9 +71,8 @@
     justify-content: space-between;
     padding-top: 3px;
 }
-.p-action p{
+.p-action button{
     width: 50%;
-    padding: 10px 0px;
     display: block;
     text-align: center;
     font-size: .9375rem;
@@ -81,10 +80,13 @@
     font-weight: 600;
     color: rgb(104, 103, 103);
     margin: 0;
+    border: none;
 }
-.p-action p:hover{
+
+.p-action button:hover{
     background-color: rgba(190, 188, 188, 0.699);
-    border-radius: 5px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
 }
 .p-comment{
     width: 100%;
@@ -92,7 +94,8 @@
 .form-cmt{
     width: 100%;
     border: 1px solid #ddd;
-    border-radius: 10px;
+    border-radius: 5px;
+    text-align: center;
 }
 .form-cmt form{
     width: 100%;
@@ -122,4 +125,12 @@
 } 
 .p-comment .list-cmt{
     width: 100%;
+}
+.login-cmt{
+    font-size: 20px;
+    text-decoration: underline;
+}
+.scrollbar-container{
+    height: auto;
+    max-height: 200px;
 }

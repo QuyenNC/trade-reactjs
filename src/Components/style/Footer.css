@@ -3,6 +3,8 @@
     width: 100%;
     background-color: white;
     padding-top: 10px;
+    /* bottom: 0;
+    position: absolute; */
 }
 .Footer h3{
     font-size: 16px;

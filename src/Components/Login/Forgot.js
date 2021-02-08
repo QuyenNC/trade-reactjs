@@ -1,5 +1,5 @@
-
-import {Link} from "react-router-dom";
+import React, { useState } from 'react';
+import {Link, Redirect} from "react-router-dom";
 import 'antd/dist/antd.css';
 import { Form, Input, Button} from 'antd';
 import {  GoogleOutlined,MailOutlined} from '@ant-design/icons';
@@ -7,9 +7,19 @@ import {  GoogleOutlined,MailOutlined} from '@ant-design/icons';
 import '../style/Forgot.css';
 
 function Forgot() {
+    const token = localStorage.getItem('token');
+    let isLoginStt = true;
+    if(token == null){
+        isLoginStt = false
+    }
+    const [isLogin ] = useState(isLoginStt);
+    
     const onFinish = (values) => {
         console.log('Received values of form: ', values);
       };
+      if(isLogin === true){
+        return <Redirect to="/"/>;
+      }
   return (
     <div className="Forgot">
        <div className="wrap">
