@@ -14,7 +14,7 @@ export function PostProvider({ children }) {
   const [dataFilter, setDataFilter] = useState([]);
   //lấy dữ liệu của các bài viết
   useEffect(() => {
-    const url = "/api/post";
+    const url = "https://gl-tradeapp.herokuapp.com/api/post";
     axios.get(url).then(function (res) {
       setPostItems(res.data.success.posts);
       setDataFilter(res.data.success.posts);
