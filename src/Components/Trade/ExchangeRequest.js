@@ -49,7 +49,7 @@ function ExchangeRequest() {
     },
     {
       title: "Trạng thái",
-      dataIndex: "statusWithTrade",
+      dataIndex: "status",
       key: "status",
       render: (status) => {
         switch (status) {
