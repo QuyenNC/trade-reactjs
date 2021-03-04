@@ -124,6 +124,12 @@ function ExchangeRequest() {
                 {"đã từ chối".toUpperCase()}
               </Tag>
             );
+            case "đã hủy":
+              return (
+                <Tag color="error" icon={<CloseCircleOutlined />}>
+                  {"đã hủy".toUpperCase()}
+                </Tag>
+              );
           case "đã nhận được hàng":
             return (
               <Tag color="success" icon={<CloseCircleOutlined />}>
