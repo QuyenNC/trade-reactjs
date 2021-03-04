@@ -50,7 +50,7 @@ function ExchangeRequest() {
     {
       title: "Trạng thái",
       dataIndex: "statusWithTrade",
-      key: "statusWithTrade",
+      key: "status",
       render: (status) => {
         switch (status) {
           case "chờ xác nhận":
@@ -68,13 +68,13 @@ function ExchangeRequest() {
           case "đồng ý":
             return (
               <Tag color="success" key={status} icon={<CheckCircleOutlined />}>
-                {status.toUpperCase()}
+                {'đang chuyển hàng'.toUpperCase()}
               </Tag>
             );
-          case "đang chuyển hàng":
+          case "":
             return (
               <Tag color="default" key={status} icon={<ClockCircleOutlined />}>
-                {status.toUpperCase()}
+                {'thành công'.toUpperCase()}
               </Tag>
             );
           case "đã hủy":

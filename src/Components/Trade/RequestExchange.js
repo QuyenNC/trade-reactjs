@@ -6,7 +6,6 @@ import {
   CheckCircleOutlined,
   SyncOutlined,
   CloseCircleOutlined,
-  ClockCircleOutlined,
 } from "@ant-design/icons";
 import { Redirect } from "react-router-dom";
 
@@ -69,13 +68,7 @@ function RequestExchange() {
           case "đồng ý":
             return (
               <Tag color="success" key={status} icon={<CheckCircleOutlined />}>
-                {status.toUpperCase()}
-              </Tag>
-            );
-          case "đang chuyển hàng":
-            return (
-              <Tag color="default" key={status} icon={<ClockCircleOutlined />}>
-                {status.toUpperCase()}
+                {'đang chuyển hàng'.toUpperCase()}
               </Tag>
             );
           case "đã hủy":
@@ -120,21 +113,6 @@ function RequestExchange() {
               </Tag>
             );
           case "đồng ý":
-            return (
-              <tradeContext.Consumer>
-                {({ onPutStatusTrade }) => (
-                  <Space size="middle">
-                    <Button
-                      type="primary"
-                      onClick={onPutStatusTrade(record._id, "đang chuyển hàng")}
-                    >
-                      Đã gửi hàng
-                    </Button>
-                  </Space>
-                )}
-              </tradeContext.Consumer>
-            );
-          case "đang chuyển hàng":
             return (
               <tradeContext.Consumer>
                 {({ onPutStatusTrade }) => (
