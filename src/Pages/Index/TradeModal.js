@@ -1,6 +1,6 @@
 import "antd/dist/antd.css";
 import { Modal, Alert } from "antd";
-import { postContext } from "../Context/PostContext";
+import { postContext } from "../../Context/PostContext";
 
 const TradeModal = (props) => {
   const {

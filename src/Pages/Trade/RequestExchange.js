@@ -9,7 +9,7 @@ import {
 } from "@ant-design/icons";
 import { Redirect } from "react-router-dom";
 
-import { tradeContext } from "../Context/TradeContext";
+import { tradeContext } from "../../Context/TradeContext";
 
 import "../style/Exchange.css";
 
@@ -49,32 +49,32 @@ function RequestExchange() {
     },
     {
       title: "Trạng thái",
-      dataIndex: "status",
+      dataIndex: "statusWithTrade",
       key: "status",
-      render: (status) => {
-        switch (status) {
+      render: (statusWithTrade) => {
+        switch (statusWithTrade) {
           case "chờ xác nhận":
             return (
-              <Tag color="processing" key={status} icon={<SyncOutlined spin />}>
-                {status.toUpperCase()}
+              <Tag color="processing" key={statusWithTrade} icon={<SyncOutlined spin />}>
+                {statusWithTrade.toUpperCase()}
               </Tag>
             );
           case "từ chối":
             return (
-              <Tag color="error" key={status} icon={<CloseCircleOutlined />}>
-                {status.toUpperCase()}
+              <Tag color="error" key={statusWithTrade} icon={<CloseCircleOutlined />}>
+                {statusWithTrade.toUpperCase()}
               </Tag>
             );
           case "đồng ý":
             return (
-              <Tag color="success" key={status} icon={<CheckCircleOutlined />}>
+              <Tag color="success" key={statusWithTrade} icon={<CheckCircleOutlined />}>
                 {'đang chuyển hàng'.toUpperCase()}
               </Tag>
             );
           case "đã hủy":
             return (
-              <Tag color="error" key={status} icon={<CloseCircleOutlined />}>
-                {status.toUpperCase()}
+              <Tag color="error" key={statusWithTrade} icon={<CloseCircleOutlined />}>
+                {statusWithTrade.toUpperCase()}
               </Tag>
             );
           default:
@@ -90,7 +90,7 @@ function RequestExchange() {
       title: "",
       key: "action",
       render: (record) => {
-        switch (record.status) {
+        switch (record.statusWithTrade) {
           case "chờ xác nhận":
             return (
               <tradeContext.Consumer>
@@ -127,7 +127,7 @@ function RequestExchange() {
                 )}
               </tradeContext.Consumer>
             );
-          case "đã nhận được hàng":
+          case "đã nhận hàng":
             return (
               <Tag color="success" icon={<CloseCircleOutlined />}>
                 {"thành công".toUpperCase()}
@@ -135,7 +135,7 @@ function RequestExchange() {
             );
           default:
             return (
-              <Tag icon={<CheckCircleOutlined />} color="success">
+              <Tag icon={<CloseCircleOutlined />} color="error">
                 {"đã hủy".toLocaleUpperCase()}
               </Tag>
             );

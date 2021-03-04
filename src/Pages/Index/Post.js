@@ -25,8 +25,8 @@ import {
   TransactionOutlined,
 } from "@ant-design/icons";
 
-import { postContext } from "../Context/PostContext";
-import { tradeContext } from "../Context/TradeContext";
+import { postContext } from "../../Context/PostContext";
+import { tradeContext } from "../../Context/TradeContext";
 
 import Like from "../image/like.svg";
 // import TradeModal from './TradeModal';

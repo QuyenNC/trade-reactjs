@@ -3,7 +3,7 @@ import "antd/dist/antd.css";
 import { Table, Space, Button, Tag } from "antd";
 import { Redirect } from "react-router-dom";
 
-import { tradeContext } from "../Context/TradeContext";
+import { tradeContext } from "../../Context/TradeContext";
 import {
   CheckCircleOutlined,
   SyncOutlined,
@@ -71,9 +71,9 @@ function ExchangeRequest() {
                 {'đang chuyển hàng'.toUpperCase()}
               </Tag>
             );
-          case "":
+          case "đã nhận hàng":
             return (
-              <Tag color="default" key={status} icon={<ClockCircleOutlined />}>
+              <Tag color="success" key={status} icon={<CheckCircleOutlined />}>
                 {'thành công'.toUpperCase()}
               </Tag>
             );
@@ -96,7 +96,7 @@ function ExchangeRequest() {
       title: "",
       key: "action",
       render: (record) => {
-        switch (record.statusWithTrade) {
+        switch (record.status) {
           case "chờ xác nhận":
             return (
               <tradeContext.Consumer>
@@ -130,12 +130,13 @@ function ExchangeRequest() {
                   {"đã hủy".toUpperCase()}
                 </Tag>
               );
-          case "đã nhận được hàng":
+          case "đã nhận hàng":
             return (
-              <Tag color="success" icon={<CloseCircleOutlined />}>
+              <Tag color="success" icon={<CheckCircleOutlined />}>
                 {"thành công".toUpperCase()}
               </Tag>
             );
+         
           case "đồng ý":
             return (
               <tradeContext.Consumer>
@@ -145,25 +146,7 @@ function ExchangeRequest() {
                       type="primary"
                       onClick={onPutStatusExchangeTrade(
                         record._id,
-                        "đang chuyển hàng"
-                      )}
-                    >
-                      Đã gửi hàng
-                    </Button>
-                  </Space>
-                )}
-              </tradeContext.Consumer>
-            );
-          case "đang chuyển hàng":
-            return (
-              <tradeContext.Consumer>
-                {({ onPutStatusExchangeTrade }) => (
-                  <Space size="middle">
-                    <Button
-                      type="primary"
-                      onClick={onPutStatusExchangeTrade(
-                        record._id,
-                        "đã nhận được hàng"
+                        "đã nhận hàng"
                       )}
                     >
                       Đã nhận được hàng
@@ -190,7 +173,7 @@ function ExchangeRequest() {
     <div className="ExchangeRequest">
       <div className="wrap">
         <div className="ex-title">
-          <h1>Các yêu cầu trao đổi</h1>
+          <h1>Các yêu cầu trao đổi </h1>
         </div>
         <div className="ex-table">
           <tradeContext.Consumer>

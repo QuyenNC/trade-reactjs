@@ -1,4 +1,4 @@
-import { postContext } from "../Context/PostContext";
+import { postContext } from "../../Context/PostContext";
 import "../style/Nav.css";
 import "antd/dist/antd.css";
 import { Menu } from "antd";

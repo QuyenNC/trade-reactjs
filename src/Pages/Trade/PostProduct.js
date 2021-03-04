@@ -6,7 +6,7 @@ import { Form, Input, Button, Upload, Select } from "antd";
 import { TagsOutlined, EnvironmentOutlined } from "@ant-design/icons";
 import ImgCrop from "antd-img-crop";
 
-import { postContext } from "../Context/PostContext";
+import { postContext } from "../../Context/PostContext";
 
 import "../style/PostProduct.css";
 

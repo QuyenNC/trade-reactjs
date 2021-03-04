@@ -4,21 +4,21 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "antd/dist/antd.css";
 import { message } from "antd";
 
-import { postContext, PostProvider } from "./Components/Context/PostContext";
-import { TradeProvider } from "./Components/Context/TradeContext";
+import { postContext, PostProvider } from "./Context/PostContext";
+import { TradeProvider } from "./Context/TradeContext";
 
 import "./App.css";
-import Header from "./Components/Header";
-import Footer from "./Components/Footer";
-import Index from "./Components/Index/Index";
-import Login from "./Components/Login/Login";
-import Register from "./Components/Login/Register";
-import Forgot from "./Components/Login/Forgot";
-import Profile from "./Components/Profile/Profile";
-import ExchangeRequest from "./Components/Trade/ExchangeRequest";
-import RequestExchange from "./Components/Trade/RequestExchange";
-import HistoryExchange from "./Components/Trade/HistoryExchange";
-import PostProduct from "./Components/Trade/PostProduct";
+import Header from "./Pages/Header";
+import Footer from "./Pages/Footer";
+import Index from "./Pages/Index/Index";
+import Login from "./Pages/Login/Login";
+import Register from "./Pages/Login/Register";
+import Forgot from "./Pages/Login/Forgot";
+import Profile from "./Pages/Profile/Profile";
+import ExchangeRequest from "./Pages/Trade/ExchangeRequest";
+import RequestExchange from "./Pages/Trade/RequestExchange";
+import HistoryExchange from "./Pages/Trade/HistoryExchange";
+import PostProduct from "./Pages/Trade/PostProduct";
 function App() {
   const token = localStorage.getItem("token");
   let isLoginStt = true;

@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { postContext } from "./Context/PostContext";
+import { postContext } from "../Context/PostContext";
 import "./style/Header.css";
 import "antd/dist/antd.css";
 
