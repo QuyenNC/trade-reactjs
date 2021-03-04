@@ -26,7 +26,7 @@ function Register() {
   const [loadRegis, setLoadRegis] = useState(false);
   const onFinish = (values) => {
     setLoadRegis(true);
-    const url = "/api/auth/register";
+    const url = "https://gl-tradeapp.herokuapp.com/api/auth/register";
     axios
       .post(url, values)
       .then(function (res) {
