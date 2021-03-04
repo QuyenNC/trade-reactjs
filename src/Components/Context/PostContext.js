@@ -16,6 +16,7 @@ export function PostProvider({ children }) {
   useEffect(() => {
     const url = "https://gl-tradeapp.herokuapp.com/api/post";
     axios.get(url).then(function (res) {
+      console.log(res.data.success.posts);
       setPostItems(res.data.success.posts);
       setDataFilter(res.data.success.posts);
     });
@@ -82,7 +83,7 @@ export function PostProvider({ children }) {
         "auth-token": `${token}`,
       },
     };
-    const url = "/api/post/create";
+    const url = "https://gl-tradeapp.herokuapp.com/api/post/create";
     axios.post(url, formData, config).then((res) => {
       if (res.data.errors) {
         localStorage.removeItem("token");
@@ -135,7 +136,7 @@ export function PostProvider({ children }) {
           "auth-token": `${token}`,
         },
       };
-      const url = `/api/post/${item._id}/like`;
+      const url = `https://gl-tradeapp.herokuapp.com/api/post/${item._id}/like`;
       axios.post(url, { item }, config).then((res) => {
         if (res.data.errors) {
           return message.error(res.data.errors.msg);
@@ -183,7 +184,7 @@ export function PostProvider({ children }) {
           "auth-token": `${token}`,
         },
       };
-      const url = `/api/post/${item._id}/comment`;
+      const url = `https://gl-tradeapp.herokuapp.com/api/post/${item._id}/comment`;
       axios.post(url, { text: cmtValue }, config).then((res) => {
         if (res.data.errors) {
           return message.error(res.data.errors.msg);

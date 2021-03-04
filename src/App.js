@@ -32,7 +32,7 @@ function App() {
   // xử lý đăng nhập , đăng xuất
   const onLoginFinish = (values) => {
     setLoadLogin(true);
-    const url = "/api/auth/login";
+    const url = "https://gl-tradeapp.herokuapp.com/api/auth/login";
     axios
       .post(url, values)
       .then(function (res) {

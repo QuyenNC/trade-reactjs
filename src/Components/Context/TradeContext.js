@@ -12,7 +12,7 @@ export function TradeProvider({ children }) {
   const [itemTrade, setItemTrade] = useState({});
   //lấy dữ liệu của các bài viết
   useEffect(() => {
-    const url = "/api/trade";
+    const url = "https://gl-tradeapp.herokuapp.com/api/trade";
     axios.get(url).then(function (res) {
       setTradeRequest(res.data.success.trades);
     });
@@ -40,7 +40,7 @@ export function TradeProvider({ children }) {
       };
       itemTrade.tradeWithPostId = inputs.selectPost;
       itemTrade.tradeWithAdress = inputs.addPost;
-      const url = `/api/trade/create`;
+      const url = `https://gl-tradeapp.herokuapp.com/api/trade/create`;
       axios.post(url, itemTrade, config).then((res) => {
         setInputs({ selectPost: "", addPost: "" });
         setIsModalVisible(false);
@@ -68,7 +68,7 @@ export function TradeProvider({ children }) {
           "auth-token": `${token}`,
         },
       };
-      const url = `/api/trade/status/${id}`;
+      const url = `https://gl-tradeapp.herokuapp.com/api/trade/status/${id}`;
       axios.put(url, { status }, config).then((res) => {
         setTradeRequest(res.data.success.trades);
       });
@@ -85,7 +85,7 @@ export function TradeProvider({ children }) {
           "auth-token": `${token}`,
         },
       };
-      const url = `/api/trade/status-exchange/${id}`;
+      const url = `https://gl-tradeapp.herokuapp.com/api/trade/status-exchange/${id}`;
       axios.put(url, { status }, config).then((res) => {
         setTradeRequest(res.data.success.trades);
       });
